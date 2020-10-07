@@ -1,0 +1,42 @@
+﻿@model SanfordMIS4200.Models.Appointment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pet.petType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pet.petType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appointmentTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appointmentTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.appointmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

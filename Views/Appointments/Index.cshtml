@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SanfordMIS4200.Models.Appointment>
+
+@{
+    ViewBag.Title = "Appointment Index";
+}
+
+<h2>Appointment Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pet.petType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appointmentTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pet.petType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appointmentTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.appointmentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.appointmentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.appointmentID })
+        </td>
+    </tr>
+}
+
+</table>
